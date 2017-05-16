@@ -23,4 +23,5 @@
 
     <include layout="@layout/content_add_alarm" />
 
+    <include layout="@layout/button_add_alarm" />
 </android.support.design.widget.CoordinatorLayout>

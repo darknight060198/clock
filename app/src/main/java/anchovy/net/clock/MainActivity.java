@@ -1,6 +1,8 @@
 package anchovy.net.clock;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,6 +17,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import anchovy.net.clock.fragment.AlarmFragment;
 
@@ -34,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    private static final String ALARM_TAG = "AlarmItem";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +96,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AddAlarmActivity.class));
                 return true;
             case R.id.delete_alarm :
+                ArrayList<HashMap<String, String>> dataSet = new ArrayList<>();
+                Gson gson = new Gson();
+                String jsonCurProduct = gson.toJson(dataSet);
 
+                SharedPreferences sharedPref = getSharedPreferences(ALARM_TAG, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+
+                editor.putString(ALARM_TAG, jsonCurProduct);
+                editor.apply();
                 return true;
         }
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:padding="4dp">
+
+        <Space
+            android:layout_width="0.8dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/space"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/add_alarm_save_button"
+            android:layout_toRightOf="@id/space"
+            android:text="Save"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_alarm_cancel_button"
+            android:layout_toLeftOf="@id/space"
+            android:text="Cancel"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
