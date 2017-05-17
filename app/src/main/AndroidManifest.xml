@@ -29,6 +29,9 @@
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <receiver android:name=".other.AlarmReceiver"/>
+
+        <service android:name=".other.RingtonePlayingService"
+            android:enabled="true"/>
     </application>
 
 </manifest>

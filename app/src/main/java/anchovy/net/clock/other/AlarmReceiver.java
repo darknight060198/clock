@@ -14,7 +14,8 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Toast.makeText(context, "Alarm started!", Toast.LENGTH_SHORT).show();
-        Toast.makeText(context, "Alarm stopped!", Toast.LENGTH_SHORT).show();
+        Intent service = new Intent(context, RingtonePlayingService.class);
+
+        context.startService(service);
     }
 }
