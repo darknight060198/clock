@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:sample="http://schemas.android.com/apk/res-auto">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:title="General">
+        android:title="Alarm">
 
-        <com.pavelsikun.seekbarpreference.SeekBarPreferenceCompat
-            />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="alarm_notification"
+            android:title="Alarm notification" />
+
+        <RingtonePreference
+            android:defaultValue="content://settings/system/notification_sound"
+            android:dependency="alarm_notification"
+            android:key="alarm_notification_ringtone"
+            android:ringtoneType="alarm"
+            android:title="Ringtone"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:dependency="alarm_notification"
+            android:key="alarm_notification_vibrate"
+            android:title="Vibration" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:dependency="alarm_notification"
+            android:key="alarm_notification_sound"
+            android:title="Sound" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
